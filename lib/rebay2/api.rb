@@ -45,7 +45,7 @@ module Rebay2
     protected
     
     def get_json_response(url)
-      Rebay::Response.new(JSON.parse(Net::HTTP.get_response(URI.parse(url)).body))
+      Rebay2::Response.new(JSON.parse(Net::HTTP.get_response(URI.parse(url)).body))
     end
 
     def build_rest_payload(params)

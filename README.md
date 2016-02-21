@@ -20,7 +20,7 @@ Or install it yourself as:
 
 Configuration
 -------------
-Create and require a config.rb, or if using rails create an initializer (rebay.rb perhaps), and place the following code into it:
+Create and require a config.rb, or if using rails create an initializer (rebay2.rb perhaps), and place the following code into it:
 
   Rebay2::Api.configure do |rebay2|
     rebay2.app_id = 'YOUR APPLICATION ID HERE'
