@@ -37,6 +37,10 @@ module Rebay2
       it "Doesn't fails without args" do
         expect{@merchandising.get_most_watched_items }.not_to raise_error(ArgumentError)
       end
+
+      it "Doesn't fail with empty array" do
+        expect(@merchandising.get_most_watched_items.class).to eq(Rebay2::Response)
+      end
       
       it "returns a hash response with categoryId as parameter" do
         expect(@merchandising.get_most_watched_items({:categoryId => 1, :itemId => 1241343}).class).to eq(Rebay2::Response)
@@ -49,7 +53,7 @@ module Rebay2
       it "iterates over results" do
         json = JSON.parse(File.read(File.dirname(__FILE__) + "/json_responses/merchandising/get_most_watched_items"))
         @merchandising.stub(:get_json_response).and_return(Rebay2::Response.new(json))
-        response = @merchandising.get_most_watched_items({:categoryId => 1})
+        response = @merchandising.get_most_watched_items
         
         count = 0
         response.each { |r| count = count + 1 }

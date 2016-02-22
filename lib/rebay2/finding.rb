@@ -94,8 +94,8 @@ module Rebay2
     end
   
     #http://developer.ebay.com/DevZone/finding/CallRef/getVersion.html
-    def get_version(*params)
-      response = get_json_response(build_request_url('getVersion', params))
+    def get_version
+      response = get_json_response(build_request_url('getVersion'))
       response.trim(:getVersionResponse)
       if response.response.has_key?('version')
         response.results = response.response['version']

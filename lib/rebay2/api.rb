@@ -50,9 +50,7 @@ module Rebay2
 
     def build_rest_payload(params)
       payload = ''
-
-      unless params.empty?
-        params = params[0] if params.is_a?(Array)
+      unless params.nil?
         params.keys.each do |key|
           payload += URI.escape "&#{key}=#{params[key]}"    
         end
