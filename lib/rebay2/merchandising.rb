@@ -57,7 +57,7 @@ module Rebay2
     private    
     def build_request_url(service, params=nil)
       params = params[0] if params.is_a?(Array)
-      url = "#{self.class.base_url}?OPERATION-NAME=#{service}&SERVICE-NAME=MerchandisingService&SERVICE-VERSION=#{VERSION}&SECURITY-APPNAME=#{Rebay2::Api.app_id}&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD"
+      url = "#{self.class.base_url}?OPERATION-NAME=#{service}&SERVICE-NAME=MerchandisingService&SERVICE-VERSION=#{VERSION}&CONSUMER-ID=#{Rebay2::Api.app_id}&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD"
       url += build_rest_payload(params)
       return url
     end
