@@ -34,12 +34,12 @@ module Rebay2
     end
 
     context "calling get_most_watched_items" do
-      it "fails without args" do
-        expect{@merchandising.get_most_watched_items }.to raise_error(ArgumentError)
+      it "Doesn't fails without args" do
+        expect{@merchandising.get_most_watched_items }.not_to raise_error(ArgumentError)
       end
       
       it "returns a hash response with categoryId as parameter" do
-        expect(@merchandising.get_most_watched_items({:categoryId => 1}).class).to eq(Rebay2::Response)
+        expect(@merchandising.get_most_watched_items({:categoryId => 1, :itemId => 1241343}).class).to eq(Rebay2::Response)
       end
 
       it "succeeds" do

@@ -7,7 +7,7 @@ module Rebay2
     #http://developer.ebay.com/devzone/merchandising/docs/CallRef/getMostWatchedItems.html
     def get_most_watched_items(*params)
       #raise ArgumentError unless params[:categoryId]
-      response = get_json_response(build_request_url('getMostWatchedItems', params))
+      response = get_json_response(build_request_url('getMostWatchedItems', params||=nil))
       response.trim(:getMostWatchedItemsResponse)
       if response.response.has_key?('itemRecommendations') && response.response['itemRecommendations'].has_key?('item')
         response.results = response.response['itemRecommendations']['item']
