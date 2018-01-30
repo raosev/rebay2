@@ -52,7 +52,8 @@ module Rebay2
       payload = ''
       unless params.nil?
         params.keys.each do |key|
-          payload += URI.escape "&#{key}=#{params[key]}"    
+          payload += "&#{key}=#{CGI.escape(params[key])}" if key == :keywords
+          payload += URI.escape "&#{key}=#{params[key]}" if key != :keywords
         end
       end
 
