@@ -4,7 +4,7 @@ module Rebay2
       "ebay.com/services/search/FindingService/v1"
     end
     
-    VERSION = '1.0.0'
+    VERSION = '1.13.0'
     #http://developer.ebay.com/Devzone/finding/CallRef/findCompletedItems.html
     def find_completed_items(params)
       raise ArgumentError unless params[:keywords] or params[:categoryId]

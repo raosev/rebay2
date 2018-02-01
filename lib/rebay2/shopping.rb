@@ -1,6 +1,6 @@
 module Rebay2
   class Shopping < Rebay2::Api
-    VERSION = '793'
+    VERSION = '1035'
     
     class << self
       def base_url_prefix
